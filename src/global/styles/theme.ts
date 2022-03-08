@@ -2,9 +2,7 @@ export default {
   colors: {
     primary: '#FFCB05',
     secondary: '#4D4D4E',
-
     attention: '#FF3326',
-
     shape: '#E5E5E5',
     title_secondary: '#8E8787',
     title: '#6B6868',

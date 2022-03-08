@@ -13,6 +13,7 @@ import {IconCounter} from '../../components/IconCounter';
 
 import {usePokemons} from '../../hooks/usePokrmons';
 import {useAuth} from '../../hooks/auth';
+import {useDarkTheme} from '../../hooks/useDarkTheme';
 
 const renderScene = SceneMap({
   first: () => {
@@ -26,6 +27,7 @@ const renderScene = SceneMap({
   },
 });
 export function Home() {
+  const {handleIsDark} = useDarkTheme();
   const theme = useTheme();
   const {listLikedPokemon} = usePokemons();
   const layout = useWindowDimensions();
@@ -81,7 +83,11 @@ export function Home() {
         />
       </BoxContent>
       <Footer>
-        <DarkButton />
+        <DarkButton
+          onPress={() => {
+            handleIsDark(true);
+          }}
+        />
         <ExitButton onPress={signOut} />
       </Footer>
     </Container>

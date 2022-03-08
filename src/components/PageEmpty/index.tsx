@@ -33,10 +33,10 @@ export function PageEmpty() {
         <>
           <ContainerPhrase>
             <PhraseNumber>
-              Olá, você tem {listLikedPokemon.length}{' '}
+              Olá, você tem {listLikedPokemon.length}
               {listLikedPokemon.length === 1
-                ? 'pokemon salvo!'
-                : 'pokemons salvos!'}
+                ? ' pokemon salvo!'
+                : ' pokemons salvos!'}
             </PhraseNumber>
           </ContainerPhrase>
           <PokeList

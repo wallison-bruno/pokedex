@@ -2,16 +2,17 @@ import React from 'react';
 
 import {TouchableOpacityProps} from 'react-native';
 
-import {Container, Title} from './styles';
+import {Container, Title, Indicator} from './styles';
 
 interface Props extends TouchableOpacityProps {
   title: string;
+  isLoading?: boolean;
 }
 
-export function Button({title, ...rest}: Props) {
+export function Button({title, isLoading = true, ...rest}: Props) {
   return (
     <Container {...rest}>
-      <Title>{title}</Title>
+      {isLoading ? <Title>{title}</Title> : <Indicator />}
     </Container>
   );
 }

@@ -14,6 +14,7 @@ import {Button} from '../../components/Button';
 import {ActivityIndicator, StatusBar} from 'react-native';
 import {useAuth} from '../../hooks/auth';
 import {useForm} from 'react-hook-form';
+import {DarkButton} from '../../components/DarkButton';
 
 export function Login() {
   const {control, handleSubmit} = useForm();
@@ -43,10 +44,14 @@ export function Login() {
             control={control}
           />
         </InputsContent>
-        <Button title="Entrar" onPress={handleSubmit(signIn)} />
-        {isLoadingSingNin && <Indicator />}
+        <Button
+          title="Entrar"
+          isLoading={!isLoadingSingNin}
+          onPress={handleSubmit(signIn)}
+        />
       </ContentLogin>
       <Figure source={require('../../assets/images/login-imagem.png')} />
+      <DarkButton style={{position: 'absolute', bottom: 20, left: 20}} />
     </Container>
   );
 }

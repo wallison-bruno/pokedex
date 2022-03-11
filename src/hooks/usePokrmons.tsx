@@ -5,57 +5,51 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import {PokemonDTO} from '../dtos';
 interface PokemonProviderProps {
   children: ReactNode;
 }
 
-interface Pokemon {
-  img: string;
-  name: string;
-  id: number;
-  type: string;
-  isFavorite: boolean;
-}
-
 interface PokemonData {
-  listPokemon: Pokemon[];
-  listLikedPokemon: Pokemon[];
-  listSearchPokemon: Pokemon[];
-  handleSetListPokemon: (listPokemon: Pokemon[]) => void;
-  handleAddListPokemon: (pokemon: Pokemon) => void;
-  handleRemoveListPokemon: (pokemon: Pokemon) => void;
-  handleAddListSearchPokemon: (pokemon: Pokemon) => void;
+  listPokemon: PokemonDTO[];
+  listLikedPokemon: PokemonDTO[];
+  listSearchPokemon: PokemonDTO[];
+  handleSetListPokemon: (listPokemon: PokemonDTO[]) => void;
+  handleAddListPokemon: (pokemon: PokemonDTO) => void;
+  handleRemoveListPokemon: (pokemon: PokemonDTO) => void;
+  handleAddListSearchPokemon: (pokemon: PokemonDTO) => void;
   handleLikedPokemon: (id: number) => void;
   handleDisLikedPokemon: (id: number) => void;
 }
+
 export const PokemonContext = createContext<PokemonData>({} as PokemonData);
 
 export function PokemonProvider({children}: PokemonProviderProps) {
-  const [listPokemon, setListPokemon] = useState<Pokemon[]>([]);
-  const [listLikedPokemon, setListLikedPokemon] = useState<Pokemon[]>([]);
-  const [listSearchPokemon, setListSearchPokemon] = useState<Pokemon[]>([]);
+  const [listPokemon, setListPokemon] = useState<PokemonDTO[]>([]);
+  const [listLikedPokemon, setListLikedPokemon] = useState<PokemonDTO[]>([]);
+  const [listSearchPokemon, setListSearchPokemon] = useState<PokemonDTO[]>([]);
 
-  function handleSetListPokemon(list: Pokemon[]) {
+  function handleSetListPokemon(list: PokemonDTO[]) {
     setListPokemon(list);
   }
 
-  function handleSetLisSearchPokemon(list: Pokemon[]) {
+  function handleSetLisSearchPokemon(list: PokemonDTO[]) {
     setListSearchPokemon(list);
   }
 
-  function handleAddListPokemon(pokemon: Pokemon) {
+  function handleAddListPokemon(pokemon: PokemonDTO) {
     setListPokemon(oldArray => [...oldArray, pokemon]);
   }
 
-  function handleAddListLikedPokemon(pokemon: Pokemon) {
+  function handleAddListLikedPokemon(pokemon: PokemonDTO) {
     setListLikedPokemon(oldArray => [...oldArray, pokemon]);
   }
 
-  function handleAddListSearchPokemon(pokemon: Pokemon) {
+  function handleAddListSearchPokemon(pokemon: PokemonDTO) {
     setListSearchPokemon(oldArray => [...oldArray, pokemon]);
   }
 
-  function handleRemoveListPokemon(pokemon: Pokemon) {
+  function handleRemoveListPokemon(pokemon: PokemonDTO) {
     const newList = listLikedPokemon.filter(item => pokemon.id !== item.id);
     setListLikedPokemon(newList);
   }

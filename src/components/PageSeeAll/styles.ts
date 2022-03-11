@@ -1,4 +1,6 @@
+import {FlatList} from 'react-native';
 import styled from 'styled-components/native';
+import {PokemonDTO} from '../../dtos';
 
 export const Container = styled.View`
   flex: 1;
@@ -21,7 +23,9 @@ export const BoxSingleButton = styled.View`
   margin-bottom: 18px;
 `;
 
-export const PokeList = styled.FlatList.attrs({
+export const PokeList = styled(
+  FlatList as new () => FlatList<PokemonDTO>,
+).attrs({
   contentContainerStyle: {
     width: '100%',
     marginTop: 14,

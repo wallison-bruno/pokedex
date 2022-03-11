@@ -1,8 +1,9 @@
 import styled, {css} from 'styled-components/native';
+import {TouchableOpacity} from 'react-native';
 interface ContainerProps {
   isSelected: boolean;
 }
-export const Container = styled.TouchableOpacity<ContainerProps>`
+export const Container = styled(TouchableOpacity)<ContainerProps>`
   align-items: center;
   border-width: 1px;
   border-color: ${({theme}) => theme.colors.title};

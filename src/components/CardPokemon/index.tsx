@@ -3,6 +3,7 @@ import {ButtonPokeCard} from '../ButtonPokeCard';
 import {TypePokemon} from '../TypePokemon';
 import {useTheme} from 'styled-components';
 import {usePokemons} from '../../hooks/usePokrmons';
+import {PokemonDTO} from '../../dtos';
 import {
   Container,
   ContainerIcon,
@@ -16,23 +17,7 @@ import {
   ContainerItem,
 } from './styles';
 
-interface AtributesType {
-  name: string;
-  url: string;
-}
-
-interface Type {
-  type: AtributesType;
-}
-interface Pokemon {
-  img: string;
-  name: string;
-  id: number;
-  type: Type[];
-  isFavorite: boolean;
-}
-
-export function CardPokemon({img, name, id, type, isFavorite}: Pokemon) {
+export function CardPokemon({img, name, id, type, isFavorite}: PokemonDTO) {
   const theme = useTheme();
   const {handleDisLikedPokemon, handleLikedPokemon} = usePokemons();
   const [marker, setMarker] = useState(isFavorite);

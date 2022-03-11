@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import {LogOut} from 'react-native-feather';
-
-export const Container = styled.TouchableOpacity`
+import {TouchableOpacity} from 'react-native';
+export const Container = styled(TouchableOpacity)`
   flex-direction: row;
   background-color: ${({theme}) => theme.colors.background};
   justify-content: center;

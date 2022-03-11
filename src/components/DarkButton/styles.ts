@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 import {Moon} from 'react-native-feather';
+import {TouchableOpacity} from 'react-native';
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled(TouchableOpacity)`
   flex-direction: row;
   background-color: ${({theme}) => theme.colors.secondary};
   align-items: center;

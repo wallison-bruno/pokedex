@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import {Search} from 'react-native-feather';
+import {TextInput} from 'react-native';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -15,7 +16,7 @@ export const Container = styled.View`
   margin-bottom: 15px;
 `;
 
-export const Input = styled.TextInput`
+export const Input = styled(TextInput)`
   flex: 1;
   font-family: ${({theme}) => theme.fonts.medium};
   font-size: 14px;

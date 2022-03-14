@@ -61,11 +61,11 @@ export function Home() {
               }}
               indicatorStyle={{
                 borderWidth: 1,
-                borderColor: 'black',
+                borderColor: theme.colors.text_dark,
               }}
               labelStyle={{
                 fontSize: 16,
-                color: 'black',
+                color: theme.colors.text_dark,
                 fontFamily: theme.fonts.medium,
                 textTransform: 'capitalize',
               }}
@@ -85,7 +85,7 @@ export function Home() {
       <Footer>
         <DarkButton
           onPress={() => {
-            handleIsDark(true);
+            handleIsDark();
           }}
         />
         <ExitButton onPress={signOut} />

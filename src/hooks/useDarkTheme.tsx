@@ -9,7 +9,7 @@ interface Node {
 
 interface ContextData {
   isDark: boolean;
-  handleIsDark(value: boolean): Promise<void>;
+  handleIsDark(): Promise<void>;
 }
 
 const AuthContext = createContext({} as ContextData);
@@ -18,8 +18,8 @@ const storageKey = `@pokemons:token`;
 function DarkThemeProvider({children}: Node) {
   const [isDark, setIsDark] = useState(false);
 
-  async function handleIsDark(value: boolean) {
-    setIsDark(value);
+  async function handleIsDark() {
+    setIsDark(!isDark);
   }
 
   return (

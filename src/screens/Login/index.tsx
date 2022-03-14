@@ -15,15 +15,17 @@ import {ActivityIndicator, StatusBar} from 'react-native';
 import {useAuth} from '../../hooks/auth';
 import {useForm} from 'react-hook-form';
 import {DarkButton} from '../../components/DarkButton';
+import {useDarkTheme} from '../../hooks/useDarkTheme';
 
 export function Login() {
+  const {handleIsDark} = useDarkTheme();
   const {control, handleSubmit} = useForm();
   const {signIn, isLoadingSingNin} = useAuth();
 
   return (
     <Container>
       <StatusBar
-        translucent={false}
+        translucent={true}
         barStyle={'dark-content'}
         backgroundColor="transparent"
       />
@@ -51,7 +53,12 @@ export function Login() {
         />
       </ContentLogin>
       <Figure source={require('../../assets/images/login-imagem.png')} />
-      <DarkButton style={{position: 'absolute', bottom: 20, left: 20}} />
+      <DarkButton
+        style={{position: 'absolute', bottom: 20, left: 20}}
+        onPress={() => {
+          handleIsDark();
+        }}
+      />
     </Container>
   );
 }

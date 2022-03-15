@@ -9,7 +9,7 @@ export default {
     text: '#FFCB05',
     background: '#1E1E1F',
     border: '#FFCB05',
-    text_dark: '#727272',
+    text_dark: '#ffffff',
     blue: '#4877f4',
     green: '#63b521',
   },

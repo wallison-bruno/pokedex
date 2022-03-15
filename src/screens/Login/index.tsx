@@ -11,7 +11,7 @@ import {
 } from './styles';
 import {InputSignIn} from '../../components/InputSignIn';
 import {Button} from '../../components/Button';
-import {ActivityIndicator, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {useAuth} from '../../hooks/auth';
 import {useForm} from 'react-hook-form';
 import {DarkButton} from '../../components/DarkButton';

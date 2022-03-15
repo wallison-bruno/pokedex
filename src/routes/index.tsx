@@ -12,7 +12,7 @@ export function Routs() {
   return (
     <>
       <ThemeProvider theme={isDark ? themeDark : themeLight}>
-        {token === '' ? <Login /> : <Home />}
+        {token === ('' || undefined) ? <Login /> : <Home />}
       </ThemeProvider>
     </>
   );

@@ -3,6 +3,7 @@ import {Container, Input} from './styles';
 import {TextInputProps} from 'react-native';
 import {Control, Controller} from 'react-hook-form';
 import {useTheme} from 'styled-components';
+
 interface Props extends TextInputProps {
   name: string;
   control: Control;
@@ -10,7 +11,6 @@ interface Props extends TextInputProps {
 
 export function InputSignIn({name, control, ...rest}: Props) {
   const theme = useTheme();
-
   return (
     <Container>
       <Controller

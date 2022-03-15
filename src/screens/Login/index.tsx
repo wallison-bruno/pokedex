@@ -13,7 +13,7 @@ import {InputSignIn} from '../../components/InputSignIn';
 import {Button} from '../../components/Button';
 import {StatusBar} from 'react-native';
 import {useAuth} from '../../hooks/auth';
-import {useForm} from 'react-hook-form';
+import {useForm, UseFormProps} from 'react-hook-form';
 import {DarkButton} from '../../components/DarkButton';
 import {useDarkTheme} from '../../hooks/useDarkTheme';
 

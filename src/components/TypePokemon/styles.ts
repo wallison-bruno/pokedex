@@ -6,7 +6,7 @@ export const Container = styled.TouchableOpacity<TypePokemon>`
   align-items: center;
   border-radius: 8px;
   margin-right: 4px;
-  background-color: ${({theme}) => theme.colors.border};
+  background-color: ${({theme}) => theme.colors.text_dark};
   ${({nameType: nameType}) =>
     nameType === 'normal' &&
     css`

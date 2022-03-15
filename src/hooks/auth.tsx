@@ -14,7 +14,7 @@ interface Node {
 
 interface ContextData {
   token: string;
-  signIn(count: Count): Promise<void>;
+  signIn(count: any): Promise<void>; // any porque o onSubmit espera o 'tipo' any
   signOut(): Promise<void>;
   isLoadingSingNin: boolean;
 }
@@ -31,7 +31,7 @@ function AuthProvider({children}: Node) {
     setToken('');
   }
 
-  async function signIn({email, password}: Count) {
+  async function signIn({email, password}: any) {
     //autenticação
     setIsLoadingSingNin(true);
     try {

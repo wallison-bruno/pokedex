@@ -1,6 +1,6 @@
 # pokedex
 
-Sign In
+Sign In 
 
-email: eve.holt@reqres.in password: cityslicka
-
+Email: eve.holt@reqres.in 
+Password: cityslicka
